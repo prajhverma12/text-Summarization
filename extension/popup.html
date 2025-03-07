@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Popup</title>
+    <style>
+        /* Custom alert styles */
+        .custom-alert {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: white;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+        }
+        .custom-alert button {
+            margin-top: 10px;
+        }
+        .custom-alert-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 999;
+        }
+    </style>
+</head>
+<body>
+    <!-- Existing content -->
+    <!-- ...existing code... -->
+
+    <!-- Button to trigger custom alert -->
+    <button id="showAlertButton">Show Alert</button>
+
+    <!-- Custom alert dialog -->
+    <div class="custom-alert-overlay" id="customAlertOverlay"></div>
+    <div class="custom-alert" id="customAlert">
+        <p>This is a custom alert!</p>
+        <button id="readSummaryButton">Read Summary</button>
+        <button id="closeAlertButton">Close</button>
+    </div>
+
+    <script>
+        // JavaScript to handle custom alert
+        document.getElementById('showAlertButton').addEventListener('click', function() {
+            document.getElementById('customAlertOverlay').style.display = 'block';
+            document.getElementById('customAlert').style.display = 'block';
+        });
+
+        document.getElementById('closeAlertButton').addEventListener('click', function() {
+            document.getElementById('customAlertOverlay').style.display = 'none';
+            document.getElementById('customAlert').style.display = 'none';
+        });
+
+        document.getElementById('readSummaryButton').addEventListener('click', function() {
+            alert('Read Summary button clicked!');
+            // Add your custom logic for the Read Summary button here
+        });
+    </script>
+</body>
+</html>
